@@ -1,23 +1,23 @@
-#C-
+Tic-Tac-Toe Game
+Acest proiect este o implementare simplă a jocului clasic Tic-Tac-Toe, dezvoltat în C++. Jocul se desfășoară pe o tablă de 3x3, iar scopul este de a forma o linie de trei simboluri identice pe orizontală, verticală sau diagonală. Este ideal pentru cei care vor să se familiarizeze cu concepte de bază în programarea C++ și manipularea structurilor de date simple.
 
-Acesta este un proiect simplu pentru un joc de ,,Tic-Tac-Toe" (sau X ?i O), implementat ?n limbajul C++. Jocul permite doi juc?tori s? joace, plas?nd simbolul "X" sau "O" pe tabla de joc 3x3, p?n? c?nd unul dintre ei c??tig? sau jocul se termin? la egalitate.
+Caracteristici
+Doi jucători: Jocul suportă doi jucători (X și O) care joacă alternativ până când unul dintre ei câștigă sau jocul se termină la egalitate.
+Tabla de joc: Tablă de 3x3 pentru plasarea simbolurilor, cu opțiuni pentru introducerea rândului și a coloanei.
+Verificarea câștigătorului: Jocul detectează automat când unul dintre jucători a format o linie de trei simboluri identice sau dacă jocul s-a terminat la egalitate.
+Interfață în linia de comandă: Simplă și ușor de utilizat, destinată rulării în mediul de consolă.
+Cum funcționează
+Jocul începe prin afișarea tablei de joc goală.
+Jucătorii introduc pe rând poziția (rândul și coloana) unde doresc să-și plaseze simbolul.
+Programul verifică dacă mutarea este validă:
+Dacă poziția este deja ocupată sau este în afara limitelor tablei, jucătorul va fi rugat să introducă o altă poziție.
+După fiecare mutare, programul verifică dacă există un câștigător (trei simboluri identice în linie) sau dacă s-a ajuns la egalitate (toate spațiile sunt ocupate fără un câștigător).
+Jocul se încheie când un jucător câștigă sau când se termină la egalitate, afișând un mesaj corespunzător.
 
-## Caracteristici
+Structura proiectului main.cpp: Acest fișier conține logica principală a jocului, gestionează intrările utilizatorilor și alternează între cei doi jucători.
+include/tic_tac_toe.hpp: Definițiile structurilor de bază, cum ar fi tabla de joc și jucătorii, precum și declarațiile funcțiilor folosite în joc.
+src/tic_tac_toe.cpp: Implementarea funcțiilor definite în tic_tac_toe.hpp, incluzând inițializarea tablei, gestionarea mutărilor jucătorilor și verificarea câștigătorului.
 
-- Implementarea jocului folosind structuri de baz? ?n C++.
-- Reprezentarea tablei de joc ca o matrice 3x3.
-- Verificarea st?rii jocului: c??tig, remiz? sau continuarea jocului.
-- Alternarea juc?torilor pentru a face mut?ri.
-- Codul poate fi extins pentru a include o interfa?? grafic?.
-
-## Structurile de baz? folosite
-
-- `Player`: O enumerare (`enum class`) care reprezint? juc?torii disponibili ?n joc - `NONE`, `X` ?i `O`.
-- `Board`: O structur? care con?ine o matrice 3x3 pentru a reprezenta tabla de joc. Ini?ializeaz? tabla de joc astfel ?nc?t toate celulele s? fie goale (`Player::NONE`).
-
-## Cerin?e
-
-Pentru a compila ?i rula proiectul, ve?i avea nevoie de:
-
-- Un compilator C++.
-- Un terminal pentru a rula aplica?ia.
+Cerințe pentru rularea proiectului
+Un compilator C++ pentru a compila și a rula codul.
+Un mediu de execuție în linia de comandă pentru interacțiunea cu jocul.
