@@ -1,0 +1,13 @@
+﻿# Ignoră fișierele obiect
+*.o
+
+# Ignoră executabilele
+*.exe
+
+# Ignoră fișierele temporare
+*.tmp
+*.log
+
+# Ignoră directoarele de configurare ale editorilor de text
+.vscode/
+.idea/
