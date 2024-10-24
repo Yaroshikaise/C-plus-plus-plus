@@ -1,30 +1,39 @@
-﻿#ifndef SNAKE_H
+﻿
+#ifndef SNAKE_H
 #define SNAKE_H
 
 #include <iostream>
 #include <vector>
 #include <conio.h>
-#include <windows.h> // Pentru manipularea consolei (funcții precum Sleep)
+#include <windows.h>
+#include "GameObject.h" 
 
 enum Direction { STOP = 0, LEFT, RIGHT, UP, DOWN };
 
-class SnakeGame {
+class SnakeGame : public GameObject { 
 private:
     bool gameOver;
-    const int width = 20;
-    const int height = 20;
+    int width, height;
     int x, y, fruitX, fruitY, score;
     Direction dir;
-    std::vector<std::pair<int, int>> tail; // Coada șarpelui
+    std::vector<std::pair<int, int>> tail;
 
-    void draw();
-    void input();
-    void logic();
-    void clearScreen();
+    void clearScreen(); 
 
 public:
-    SnakeGame();
-    void run();
+    SnakeGame(); 
+    SnakeGame(int width, int height); 
+    SnakeGame(const SnakeGame& other); 
+
+    SnakeGame& operator=(const SnakeGame& other);
+    bool operator==(const SnakeGame& other) const; 
+
+    friend std::istream& operator>>(std::istream& in, SnakeGame& game); 
+    friend std::ostream& operator<<(std::ostream& out, const SnakeGame& game); 
+
+    void run(); 
+    void draw() override; 
+    void update() override; 
 };
 
 #endif
